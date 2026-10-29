@@ -237,11 +237,14 @@ The project aims to:
 - [ ] Develop a Streamlit dashboard.
 - [ ] Add automated tests and usage documentation.
 
-## Author
+## Authors
 
 Nientevvv-sketch
 
 GitHub: [github.com/nientevvv-sketch](https://github.com/nientevvv-sketch)
+
+airanplayhd-dotcom
+GitHub: [github.com/airanplayhd-dotcom](https://github.com/airanplayhd-dotcom)
 
 ---
 
