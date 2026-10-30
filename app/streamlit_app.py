@@ -1,4 +1,3 @@
-
 from pathlib import Path
 import json
 import joblib
@@ -11,7 +10,7 @@ MODEL_PATH = ROOT_DIR / "models" / "risk_model.joblib"
 METADATA_PATH = ROOT_DIR / "models" / "model_metadata.json"
 
 
-
+# Configure the Streamlit page metadata and overall layout.
 st.set_page_config(
     page_title="AI Risk Analyzer",
     layout="wide",
@@ -19,10 +18,11 @@ st.set_page_config(
 
 
 # --------------------------------------------------
-# Load trained model and metadata
+# Load the trained model and metadata used to validate feature schema.
 # --------------------------------------------------
 @st.cache_resource
 def load_model():
+    """Load the trained classifier from disk."""
     if not MODEL_PATH.exists():
         raise FileNotFoundError(f"Model not found: {MODEL_PATH}")
 
@@ -32,18 +32,9 @@ def load_model():
     return joblib.load(MODEL_PATH)
 
 
-@st.cache_resource
-def load_model():
-    if not MODEL_PATH.exists():
-        raise FileNotFoundError(
-            f"Trained model not found: {MODEL_PATH}"
-        )
-
-    return joblib.load(MODEL_PATH)
-
-
 @st.cache_data
 def load_metadata():
+    """Load the model metadata that defines the expected input features."""
     if not METADATA_PATH.exists():
         raise FileNotFoundError(
             f"Model metadata not found: {METADATA_PATH}"
@@ -61,6 +52,7 @@ def load_metadata():
 
 
 def validate_feature_schema(model, metadata):
+    """Ensure the trained model and metadata describe the same inputs."""
     model_features = getattr(model, "feature_names_in_", None)
     if model_features is None:
         return
@@ -184,6 +176,7 @@ with st.form("risk_assessment_form"):
                     help=feature.get("help"),
                 )
 
+    # Let the user adjust the decision boundary used to label high-risk cases.
     threshold = st.slider(
         "Risk decision threshold",
         min_value=0.05,
