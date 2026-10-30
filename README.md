@@ -145,3 +145,12 @@ Contributions and improvements are welcome. Common areas for enhancement include
 - validation and calibration analysis
 - better error handling and deployment setup
 - additional model comparisons and evaluation reports
+
+
+## Authors
+
+- **[Nikita Nassyrov]** — ML development, model evaluation, data analysis.
+- **[Friend's Name]** — Financial analysis, Excel data preparation, industry research.
+
+GitHub: [@nientevvv-sketch](https://github.com/nientevvv-sketch) [@airanplayhd-dotcom](https://github.com/airanplayhd-dotcom) 
+
