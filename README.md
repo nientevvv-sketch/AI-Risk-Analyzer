@@ -1,10 +1,10 @@
 # AI Risk Analyzer
 
-AI Risk Analyzer is a machine learning project for assessing the likelihood of a company being in a high-risk financial state using structured financial indicators. The project includes a training pipeline, model metadata, and a Streamlit interface for risk evaluation.
+AI Risk Analyzer is a machine learning project for assessing the likelihood of a company being in a high-risk financial state using structured financial indicators. The project includes a training pipeline, a web application, and supporting model metadata for evaluating corporate distress risk.
 
 ## Overview
 
-This repository builds and serves a predictive risk model that evaluates company financial fundamentals such as leverage, profitability, liquidity, and balance-sheet indicators. It is designed for research and decision-support workflows rather than as a substitute for professional financial advice.
+This repository builds and serves a predictive risk model that evaluates company financial fundamentals such as leverage, profitability, liquidity, and balance-sheet indicators. It is designed for research-oriented financial analysis and decision support, not for regulated credit underwriting.
 
 The project currently includes:
 
@@ -21,13 +21,41 @@ The project currently includes:
 - Adjustable probability threshold in the UI
 - Interactive dashboard for risk analysis using Streamlit
 
+## Model Comparison
+
+Four machine learning algorithms are evaluated:
+
+- Logistic Regression
+- Decision Tree
+- Random Forest
+- Gradient Boosting
+
+Models are compared using a consistent evaluation pipeline and stratified data splitting.
+
+## Evaluation Metrics
+
+The project evaluates financial bankruptcy prediction using:
+
+- ROC-AUC — ability to distinguish between bankrupt and non-bankrupt companies.
+- PR-AUC — precision-recall performance, particularly important for imbalanced data.
+- Precision — proportion of correctly identified bankruptcy cases among positive predictions.
+- Recall — proportion of actual bankruptcy cases correctly identified.
+- F1-score — harmonic mean of precision and recall.
+- Confusion Matrix — breakdown of true positives, true negatives, false positives, and false negatives.
+
+## Model Evaluation and Risk Analysis
+
+The evaluation focuses on identifying financially distressed companies while accounting for class imbalance and the different consequences of classification errors.
+
+Actual experimental results are reported in the project's results directory.
+
 ## Project structure
 
 ```text
 AI-Risk-Analyzer/
 ├── app/
 │   └── streamlit_app.py
-├── data/ 
+├── data/
 │   ├── data.csv
 │   ├── Insurance_Brokers_Peer_Ultimate_Model_audit_v4.xlsx
 │   └── WTW_Clean_Financial_Model.xlsx
@@ -42,7 +70,7 @@ AI-Risk-Analyzer/
 │   └── train_risk_model.py
 ├── .gitignore
 ├── README.md
-└── LICENSE 
+└── LICENSE
 ```
 
 ## Data and modeling
@@ -104,7 +132,7 @@ Then open the local URL shown by Streamlit in your browser.
 
 ## Using the app
 
-The app displays a form with the financial indicators used during training. Once values are entered, the model evaluates the probability of the configured positive class and compares it against the selected threshold.
+The app displays a form with the financial indicators used during training. Once values are entered, the model evaluates the probability of the configured positive class and compares it against the selected decision threshold.
 
 The user can also inspect:
 
@@ -145,11 +173,9 @@ Contributions and improvements are welcome. Common areas for enhancement include
 - better error handling and deployment setup
 - additional model comparisons and evaluation reports
 
-
 ## Authors
 
 - **[Nikita Nassyrov]** — ML development, model evaluation, data analysis.
 - **[Friend's Name]** — Financial analysis, Excel data preparation, industry research.
 
-GitHub: [@nientevvv-sketch](https://github.com/nientevvv-sketch) [@airanplayhd-dotcom](https://github.com/airanplayhd-dotcom) 
-
+GitHub: [@nientevvv-sketch](https://github.com/nientevvv-sketch) [@airanplayhd-dotcom](https://github.com/airanplayhd-dotcom)
