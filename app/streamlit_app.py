@@ -13,7 +13,6 @@ METADATA_PATH = ROOT_DIR / "models" / "model_metadata.json"
 
 st.set_page_config(
     page_title="AI Risk Analyzer",
-    page_icon="📊",
     layout="wide",
 )
 
