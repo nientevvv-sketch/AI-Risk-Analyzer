@@ -5,9 +5,10 @@ import joblib
 import pandas as pd
 import streamlit as st
 
-ROOT_DIR = Path(__file__).resolve().parent
-MODEL_PATH = ROOT_DIR / "models" / "risk_model.joblib"
-METADATA_PATH = ROOT_DIR / "models" / "model_metadata.json"
+root_dir = Path(__file__).resolve().parents[1]
+
+model_path = root_dir / "models" / "risk_model.joblib"
+metadata_path =root_dir / "models" / "model_metadata.json"
 
 
 
