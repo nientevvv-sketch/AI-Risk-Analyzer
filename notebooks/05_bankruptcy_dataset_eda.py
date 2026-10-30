@@ -3,7 +3,7 @@
 Run from the repository root:
     python comparative_experiment_fixed.py
 
-Outputs are written to results/vv/.
+Outputs are written to results/04_bankruptcy_dataset_eda/.
 
 Methodology:
 - One stratified train/test split shared by all four models.
@@ -46,7 +46,7 @@ INNER_SPLITS = 3
 OUTER_SPLITS = 3
 OUTER_REPEATS = 1
 N_JOBS = 1
-RESULTS_DIR = Path("results") / "vv"
+RESULTS_DIR = Path("results") / "04_bankruptcy_dataset_eda"
 MALIGNANT_LABEL = 0
 
 
