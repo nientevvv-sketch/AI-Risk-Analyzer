@@ -1,10 +1,10 @@
-
 from pathlib import Path
 import pandas as pd
 
 DATA_PATH = Path("data.csv")
 TARGET = "Bankrupt?"
 
+# Load the dataset and inspect its basic structure.
 df = pd.read_csv(DATA_PATH)
 
 print("=== Dataset overview ===")
