@@ -1,0 +1,862 @@
+{
+  "task_name": "Company Bankruptcy Prediction",
+  "positive_class": 1,
+  "threshold": 0.5,
+  "features": [
+    {
+      "name": " ROA(C) before interest and depreciation before interest",
+      "label": " Roa(C) Before Interest And Depreciation Before Interest",
+      "type": "number",
+      "min": 0.0242772875737337,
+      "max": 1.0,
+      "default": 0.502120606444694,
+      "step": 0.01
+    },
+    {
+      "name": " ROA(A) before interest and % after tax",
+      "label": " Roa(A) Before Interest And % After Tax",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.559365460095944,
+      "step": 0.01
+    },
+    {
+      "name": " ROA(B) before interest and depreciation after tax",
+      "label": " Roa(B) Before Interest And Depreciation After Tax",
+      "type": "number",
+      "min": 0.0335135713903313,
+      "max": 1.0,
+      "default": 0.55168906258365,
+      "step": 0.01
+    },
+    {
+      "name": " Operating Gross Margin",
+      "label": " Operating Gross Margin",
+      "type": "number",
+      "min": 0.0,
+      "max": 0.665150838149873,
+      "default": 0.605983078453134,
+      "step": 0.01
+    },
+    {
+      "name": " Realized Sales Gross Margin",
+      "label": " Realized Sales Gross Margin",
+      "type": "number",
+      "min": 0.0,
+      "max": 0.666022859943211,
+      "default": 0.60591821732801,
+      "step": 0.01
+    },
+    {
+      "name": " Operating Profit Rate",
+      "label": " Operating Profit Rate",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.999021661638436,
+      "step": 0.01
+    },
+    {
+      "name": " Pre-tax net Interest Rate",
+      "label": " Pre-Tax Net Interest Rate",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.797461673811721,
+      "step": 0.01
+    },
+    {
+      "name": " After-tax net Interest Rate",
+      "label": " After-Tax Net Interest Rate",
+      "type": "number",
+      "min": 0.0842855967361087,
+      "max": 1.0,
+      "default": 0.80937428716952,
+      "step": 0.01
+    },
+    {
+      "name": " Non-industry income and expenditure/revenue",
+      "label": " Non-Industry Income And Expenditure/Revenue",
+      "type": "number",
+      "min": 0.0625072056487936,
+      "max": 1.0,
+      "default": 0.303525251131211,
+      "step": 0.01
+    },
+    {
+      "name": " Continuous interest rate (after tax)",
+      "label": " Continuous Interest Rate (After Tax)",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.781633693951788,
+      "step": 0.01
+    },
+    {
+      "name": " Operating Expense Rate",
+      "label": " Operating Expense Rate",
+      "type": "number",
+      "min": 0.0,
+      "max": 9990000000.0,
+      "default": 0.0002752148554965,
+      "step": 0.01
+    },
+    {
+      "name": " Research and development expense rate",
+      "label": " Research And Development Expense Rate",
+      "type": "number",
+      "min": 0.0,
+      "max": 9980000000.0,
+      "default": 492000000.0,
+      "step": 0.01
+    },
+    {
+      "name": " Cash flow rate",
+      "label": " Cash Flow Rate",
+      "type": "number",
+      "min": 0.0,
+      "max": 0.74325088279946,
+      "default": 0.465076369492464,
+      "step": 0.01
+    },
+    {
+      "name": " Interest-bearing debt interest rate",
+      "label": " Interest-Bearing Debt Interest Rate",
+      "type": "number",
+      "min": 0.0,
+      "max": 990000000.0,
+      "default": 0.0003210321032103,
+      "step": 0.01
+    },
+    {
+      "name": " Tax rate (A)",
+      "label": " Tax Rate (A)",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0718696224314202,
+      "step": 0.01
+    },
+    {
+      "name": " Net Value Per Share (B)",
+      "label": " Net Value Per Share (B)",
+      "type": "number",
+      "min": 0.0,
+      "max": 0.549197252538873,
+      "default": 0.184063039905609,
+      "step": 0.01
+    },
+    {
+      "name": " Net Value Per Share (A)",
+      "label": " Net Value Per Share (A)",
+      "type": "number",
+      "min": 0.0,
+      "max": 0.549197252538873,
+      "default": 0.184063039905609,
+      "step": 0.01
+    },
+    {
+      "name": " Net Value Per Share (C)",
+      "label": " Net Value Per Share (C)",
+      "type": "number",
+      "min": 0.0,
+      "max": 0.549197252538873,
+      "default": 0.184105178879946,
+      "step": 0.01
+    },
+    {
+      "name": " Persistent EPS in the Last Four Seasons",
+      "label": " Persistent Eps In The Last Four Seasons",
+      "type": "number",
+      "min": 0.0785667013330812,
+      "max": 1.0,
+      "default": 0.224260187198639,
+      "step": 0.01
+    },
+    {
+      "name": " Cash Flow Per Share",
+      "label": " Cash Flow Per Share",
+      "type": "number",
+      "min": 0.201987691872392,
+      "max": 1.0,
+      "default": 0.322451722430502,
+      "step": 0.01
+    },
+    {
+      "name": " Revenue Per Share (Yuan ¥)",
+      "label": " Revenue Per Share (Yuan ¥)",
+      "type": "number",
+      "min": 0.0,
+      "max": 3020000000.0,
+      "default": 0.0274059621579927,
+      "step": 0.01
+    },
+    {
+      "name": " Operating Profit Per Share (Yuan ¥)",
+      "label": " Operating Profit Per Share (Yuan ¥)",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.104144613630812,
+      "step": 0.01
+    },
+    {
+      "name": " Per Share Net profit before tax (Yuan ¥)",
+      "label": " Per Share Net Profit Before Tax (Yuan ¥)",
+      "type": "number",
+      "min": 0.0091135045567522,
+      "max": 1.0,
+      "default": 0.179407998794909,
+      "step": 0.01
+    },
+    {
+      "name": " Realized Sales Gross Profit Growth Rate",
+      "label": " Realized Sales Gross Profit Growth Rate",
+      "type": "number",
+      "min": 0.0,
+      "max": 0.101643390831576,
+      "default": 0.0221021519334869,
+      "step": 0.01
+    },
+    {
+      "name": " Operating Profit Growth Rate",
+      "label": " Operating Profit Growth Rate",
+      "type": "number",
+      "min": 0.0,
+      "max": 0.887703859740659,
+      "default": 0.848043263175053,
+      "step": 0.01
+    },
+    {
+      "name": " After-tax Net Profit Growth Rate",
+      "label": " After-Tax Net Profit Growth Rate",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.689437054800702,
+      "step": 0.01
+    },
+    {
+      "name": " Regular Net Profit Growth Rate",
+      "label": " Regular Net Profit Growth Rate",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.689437083654476,
+      "step": 0.01
+    },
+    {
+      "name": " Continuous Net Profit Growth Rate",
+      "label": " Continuous Net Profit Growth Rate",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.217597897635357,
+      "step": 0.01
+    },
+    {
+      "name": " Total Asset Growth Rate",
+      "label": " Total Asset Growth Rate",
+      "type": "number",
+      "min": 0.0,
+      "max": 9980000000.0,
+      "default": 6400000000.0,
+      "step": 0.01
+    },
+    {
+      "name": " Net Value Growth Rate",
+      "label": " Net Value Growth Rate",
+      "type": "number",
+      "min": 0.0,
+      "max": 1350000000.0,
+      "default": 0.0004612318451255,
+      "step": 0.01
+    },
+    {
+      "name": " Total Asset Return Growth Rate Ratio",
+      "label": " Total Asset Return Growth Rate Ratio",
+      "type": "number",
+      "min": 0.0,
+      "max": 0.285429439510144,
+      "default": 0.264045659758647,
+      "step": 0.01
+    },
+    {
+      "name": " Cash Reinvestment %",
+      "label": " Cash Reinvestment %",
+      "type": "number",
+      "min": 0.0,
+      "max": 0.75994746842517,
+      "default": 0.380425468499683,
+      "step": 0.01
+    },
+    {
+      "name": " Current Ratio",
+      "label": " Current Ratio",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0105740699717006,
+      "step": 0.01
+    },
+    {
+      "name": " Quick Ratio",
+      "label": " Quick Ratio",
+      "type": "number",
+      "min": 0.0,
+      "max": 9230000000.0,
+      "default": 0.0073631886730539,
+      "step": 0.01
+    },
+    {
+      "name": " Interest Expense Ratio",
+      "label": " Interest Expense Ratio",
+      "type": "number",
+      "min": 0.0,
+      "max": 0.897787359077273,
+      "default": 0.630700949302064,
+      "step": 0.01
+    },
+    {
+      "name": " Total debt/Total net worth",
+      "label": " Total Debt/Total Net Worth",
+      "type": "number",
+      "min": 0.0,
+      "max": 5930000000.0,
+      "default": 0.0055417248014298,
+      "step": 0.01
+    },
+    {
+      "name": " Debt ratio %",
+      "label": " Debt Ratio %",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.111406717658796,
+      "step": 0.01
+    },
+    {
+      "name": " Net worth/Assets",
+      "label": " Net Worth/Assets",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.888593282341204,
+      "step": 0.01
+    },
+    {
+      "name": " Long-term fund suitability ratio (A)",
+      "label": " Long-Term Fund Suitability Ratio (A)",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0056511489491373,
+      "step": 0.01
+    },
+    {
+      "name": " Borrowing dependency",
+      "label": " Borrowing Dependency",
+      "type": "number",
+      "min": 0.187124091052444,
+      "max": 0.954819351216665,
+      "default": 0.372627677634802,
+      "step": 0.01
+    },
+    {
+      "name": " Contingent liabilities/Net worth",
+      "label": " Contingent Liabilities/Net Worth",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0053658477137564,
+      "step": 0.01
+    },
+    {
+      "name": " Operating profit/Paid-in capital",
+      "label": " Operating Profit/Paid-In Capital",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.103978373801032,
+      "step": 0.01
+    },
+    {
+      "name": " Net profit before tax/Paid-in capital",
+      "label": " Net Profit Before Tax/Paid-In Capital",
+      "type": "number",
+      "min": 0.0524394842017947,
+      "max": 1.0,
+      "default": 0.178252017193274,
+      "step": 0.01
+    },
+    {
+      "name": " Inventory and accounts receivable/Net value",
+      "label": " Inventory And Accounts Receivable/Net Value",
+      "type": "number",
+      "min": 0.351418699584552,
+      "max": 1.0,
+      "default": 0.400161838528556,
+      "step": 0.01
+    },
+    {
+      "name": " Total Asset Turnover",
+      "label": " Total Asset Turnover",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.119940029985008,
+      "step": 0.01
+    },
+    {
+      "name": " Accounts Receivable Turnover",
+      "label": " Accounts Receivable Turnover",
+      "type": "number",
+      "min": 0.0,
+      "max": 9740000000.0,
+      "default": 0.0009698396112525,
+      "step": 0.01
+    },
+    {
+      "name": " Average Collection Days",
+      "label": " Average Collection Days",
+      "type": "number",
+      "min": 0.0,
+      "max": 9730000000.0,
+      "default": 0.0065597287985073,
+      "step": 0.01
+    },
+    {
+      "name": " Inventory Turnover Rate (times)",
+      "label": " Inventory Turnover Rate (Times)",
+      "type": "number",
+      "min": 0.0001001222676317,
+      "max": 9990000000.0,
+      "default": 0.0007325739963745,
+      "step": 0.01
+    },
+    {
+      "name": " Fixed Assets Turnover Frequency",
+      "label": " Fixed Assets Turnover Frequency",
+      "type": "number",
+      "min": 0.0,
+      "max": 9990000000.0,
+      "default": 0.0005862857549204,
+      "step": 0.01
+    },
+    {
+      "name": " Net Worth Turnover Rate (times)",
+      "label": " Net Worth Turnover Rate (Times)",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0296774193548387,
+      "step": 0.01
+    },
+    {
+      "name": " Revenue per person",
+      "label": " Revenue Per Person",
+      "type": "number",
+      "min": 0.0,
+      "max": 8810000000.0,
+      "default": 0.018462758691597,
+      "step": 0.01
+    },
+    {
+      "name": " Operating profit per person",
+      "label": " Operating Profit Per Person",
+      "type": "number",
+      "min": 0.0,
+      "max": 0.97817778883336,
+      "default": 0.395784808122838,
+      "step": 0.01
+    },
+    {
+      "name": " Allocation rate per person",
+      "label": " Allocation Rate Per Person",
+      "type": "number",
+      "min": 0.0,
+      "max": 8900000000.0,
+      "default": 0.0077899875530896,
+      "step": 0.01
+    },
+    {
+      "name": " Working Capital to Total Assets",
+      "label": " Working Capital To Total Assets",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.810123596346922,
+      "step": 0.01
+    },
+    {
+      "name": " Quick Assets/Total Assets",
+      "label": " Quick Assets/Total Assets",
+      "type": "number",
+      "min": 0.0014689526179957,
+      "max": 1.0,
+      "default": 0.387411684036527,
+      "step": 0.01
+    },
+    {
+      "name": " Current Assets/Total Assets",
+      "label": " Current Assets/Total Assets",
+      "type": "number",
+      "min": 0.0014072948502026,
+      "max": 1.0,
+      "default": 0.515921213525164,
+      "step": 0.01
+    },
+    {
+      "name": " Cash/Total Assets",
+      "label": " Cash/Total Assets",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0746274732412844,
+      "step": 0.01
+    },
+    {
+      "name": " Quick Assets/Current Liability",
+      "label": " Quick Assets/Current Liability",
+      "type": "number",
+      "min": 0.000119993107783,
+      "max": 8820000000.0,
+      "default": 0.0078794962254472,
+      "step": 0.01
+    },
+    {
+      "name": " Cash/Current Liability",
+      "label": " Cash/Current Liability",
+      "type": "number",
+      "min": 0.0,
+      "max": 9650000000.0,
+      "default": 0.0048403330744541,
+      "step": 0.01
+    },
+    {
+      "name": " Current Liability to Assets",
+      "label": " Current Liability To Assets",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0825844743990746,
+      "step": 0.01
+    },
+    {
+      "name": " Operating Funds to Liability",
+      "label": " Operating Funds To Liability",
+      "type": "number",
+      "min": 0.0147233818717421,
+      "max": 0.776297380303221,
+      "default": 0.34857846188812,
+      "step": 0.01
+    },
+    {
+      "name": " Inventory/Working Capital",
+      "label": " Inventory/Working Capital",
+      "type": "number",
+      "min": 0.0753970857587847,
+      "max": 1.0,
+      "default": 0.277178871425858,
+      "step": 0.01
+    },
+    {
+      "name": " Inventory/Current Liability",
+      "label": " Inventory/Current Liability",
+      "type": "number",
+      "min": 0.0,
+      "max": 9910000000.0,
+      "default": 0.0065220343718871,
+      "step": 0.01
+    },
+    {
+      "name": " Current Liabilities/Liability",
+      "label": " Current Liabilities/Liability",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.80799663969795,
+      "step": 0.01
+    },
+    {
+      "name": " Working Capital/Equity",
+      "label": " Working Capital/Equity",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.736016191049916,
+      "step": 0.01
+    },
+    {
+      "name": " Current Liabilities/Equity",
+      "label": " Current Liabilities/Equity",
+      "type": "number",
+      "min": 0.15381128977072,
+      "max": 1.0,
+      "default": 0.329678742849431,
+      "step": 0.01
+    },
+    {
+      "name": " Long-term Liability to Current Assets",
+      "label": " Long-Term Liability To Current Assets",
+      "type": "number",
+      "min": 0.0,
+      "max": 9450000000.0,
+      "default": 0.0019441869775026,
+      "step": 0.01
+    },
+    {
+      "name": " Retained Earnings to Total Assets",
+      "label": " Retained Earnings To Total Assets",
+      "type": "number",
+      "min": 0.0,
+      "max": 0.998858027137315,
+      "default": 0.937552052393016,
+      "step": 0.01
+    },
+    {
+      "name": " Total income/Total expense",
+      "label": " Total Income/Total Expense",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0023341532382643,
+      "step": 0.01
+    },
+    {
+      "name": " Total expense/Assets",
+      "label": " Total Expense/Assets",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0229093942859092,
+      "step": 0.01
+    },
+    {
+      "name": " Current Asset Turnover Rate",
+      "label": " Current Asset Turnover Rate",
+      "type": "number",
+      "min": 0.0,
+      "max": 10000000000.0,
+      "default": 0.0001982660445749,
+      "step": 0.01
+    },
+    {
+      "name": " Quick Asset Turnover Rate",
+      "label": " Quick Asset Turnover Rate",
+      "type": "number",
+      "min": 0.0,
+      "max": 10000000000.0,
+      "default": 0.0002268860655258,
+      "step": 0.01
+    },
+    {
+      "name": " Working capitcal Turnover Rate",
+      "label": " Working Capitcal Turnover Rate",
+      "type": "number",
+      "min": 0.573380786615969,
+      "max": 1.0,
+      "default": 0.59396251710646,
+      "step": 0.01
+    },
+    {
+      "name": " Cash Turnover Rate",
+      "label": " Cash Turnover Rate",
+      "type": "number",
+      "min": 0.0,
+      "max": 10000000000.0,
+      "default": 1140000000.0,
+      "step": 0.01
+    },
+    {
+      "name": " Cash Flow to Sales",
+      "label": " Cash Flow To Sales",
+      "type": "number",
+      "min": 0.652037361481932,
+      "max": 1.0,
+      "default": 0.671573908502479,
+      "step": 0.01
+    },
+    {
+      "name": " Fixed Assets to Assets",
+      "label": " Fixed Assets To Assets",
+      "type": "number",
+      "min": 0.0,
+      "max": 8320000000.0,
+      "default": 0.19946892477224,
+      "step": 0.01
+    },
+    {
+      "name": " Current Liability to Liability",
+      "label": " Current Liability To Liability",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.80799663969795,
+      "step": 0.01
+    },
+    {
+      "name": " Current Liability to Equity",
+      "label": " Current Liability To Equity",
+      "type": "number",
+      "min": 0.15381128977072,
+      "max": 1.0,
+      "default": 0.329678742849431,
+      "step": 0.01
+    },
+    {
+      "name": " Equity to Long-term Liability",
+      "label": " Equity To Long-Term Liability",
+      "type": "number",
+      "min": 0.0258510850561139,
+      "max": 1.0,
+      "default": 0.112323852633009,
+      "step": 0.01
+    },
+    {
+      "name": " Cash Flow to Total Assets",
+      "label": " Cash Flow To Total Assets",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.645395006715208,
+      "step": 0.01
+    },
+    {
+      "name": " Cash Flow to Liability",
+      "label": " Cash Flow To Liability",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.459745937083218,
+      "step": 0.01
+    },
+    {
+      "name": " CFO to Assets",
+      "label": " Cfo To Assets",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.593266274083544,
+      "step": 0.01
+    },
+    {
+      "name": " Cash Flow to Equity",
+      "label": " Cash Flow To Equity",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.314958451108117,
+      "step": 0.01
+    },
+    {
+      "name": " Current Liability to Current Assets",
+      "label": " Current Liability To Current Assets",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0276297938542726,
+      "step": 0.01
+    },
+    {
+      "name": " Liability-Assets Flag",
+      "label": " Liability-Assets Flag",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0,
+      "step": 0.01
+    },
+    {
+      "name": " Net Income to Total Assets",
+      "label": " Net Income To Total Assets",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.810356988580264,
+      "step": 0.01
+    },
+    {
+      "name": " Total assets to GNP price",
+      "label": " Total Assets To Gnp Price",
+      "type": "number",
+      "min": 0.0,
+      "max": 9820000000.0,
+      "default": 0.0020661455217342,
+      "step": 0.01
+    },
+    {
+      "name": " No-credit Interval",
+      "label": " No-Credit Interval",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.623875104929383,
+      "step": 0.01
+    },
+    {
+      "name": " Gross Profit to Sales",
+      "label": " Gross Profit To Sales",
+      "type": "number",
+      "min": 0.0,
+      "max": 0.665149206909514,
+      "default": 0.605983373475964,
+      "step": 0.01
+    },
+    {
+      "name": " Net Income to Stockholder's Equity",
+      "label": " Net Income To Stockholder'S Equity",
+      "type": "number",
+      "min": 0.344652473106317,
+      "max": 1.0,
+      "default": 0.8411463980526,
+      "step": 0.01
+    },
+    {
+      "name": " Liability to Equity",
+      "label": " Liability To Equity",
+      "type": "number",
+      "min": 0.133502904798771,
+      "max": 1.0,
+      "default": 0.278779433410011,
+      "step": 0.01
+    },
+    {
+      "name": " Degree of Financial Leverage (DFL)",
+      "label": " Degree Of Financial Leverage (Dfl)",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.026808753586052,
+      "step": 0.01
+    },
+    {
+      "name": " Interest Coverage Ratio (Interest expense to EBIT)",
+      "label": " Interest Coverage Ratio (Interest Expense To Ebit)",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.565254146067448,
+      "step": 0.01
+    },
+    {
+      "name": " Net Income Flag",
+      "label": " Net Income Flag",
+      "type": "number",
+      "min": 0.0,
+      "max": 2.0,
+      "default": 1.0,
+      "step": 0.01
+    },
+    {
+      "name": " Equity to Liability",
+      "label": " Equity To Liability",
+      "type": "number",
+      "min": 0.0,
+      "max": 1.0,
+      "default": 0.0338021771323038,
+      "step": 0.01
+    }
+  ]
+}
