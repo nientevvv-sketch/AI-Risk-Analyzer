@@ -1,0 +1,24 @@
+Model,Test row index,Actual class,Predicted class,Predicted probability (malignant)
+Logistic Regression,541,benign,malignant,0.6272272750598777
+Logistic Regression,73,malignant,benign,0.20554479037224083
+Logistic Regression,205,malignant,benign,0.48563993106844616
+Decision Tree,406,benign,malignant,1.0
+Decision Tree,528,benign,malignant,0.6666666666666666
+Decision Tree,275,benign,malignant,0.6666666666666666
+Decision Tree,340,benign,malignant,1.0
+Decision Tree,375,benign,malignant,1.0
+Decision Tree,73,malignant,benign,0.0
+Decision Tree,385,malignant,benign,0.003937007874015748
+Decision Tree,291,benign,malignant,1.0
+Decision Tree,205,malignant,benign,0.0
+Random Forest,363,benign,malignant,0.72
+Random Forest,406,benign,malignant,0.69
+Random Forest,41,malignant,benign,0.43
+Random Forest,73,malignant,benign,0.33
+Random Forest,385,malignant,benign,0.35
+Gradient Boosting,363,benign,malignant,0.8469036652705403
+Gradient Boosting,41,malignant,benign,0.05965068709455834
+Gradient Boosting,73,malignant,benign,0.08769453371996272
+Gradient Boosting,385,malignant,benign,0.2859740115894531
+Gradient Boosting,205,malignant,benign,0.2875784658986221
+Gradient Boosting,128,benign,malignant,0.5695105567174242
