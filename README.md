@@ -27,8 +27,7 @@ The project currently includes:
 AI-Risk-Analyzer/
 ├── app/
 │   └── streamlit_app.py
-├── data/
-│   ├── README.md
+├── data/ 
 │   ├── data.csv
 │   ├── Insurance_Brokers_Peer_Ultimate_Model_audit_v4.xlsx
 │   └── WTW_Clean_Financial_Model.xlsx
@@ -43,7 +42,7 @@ AI-Risk-Analyzer/
 │   └── train_risk_model.py
 ├── .gitignore
 ├── README.md
-└── LICENSE (if added later)
+└── LICENSE 
 ```
 
 ## Data and modeling
