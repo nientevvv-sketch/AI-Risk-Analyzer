@@ -352,7 +352,7 @@ If you encounter the following error:
 
 ```text
 FileNotFoundError: Training data not found:
-C:\Users\user\AI-Risk-Analyzer\data.csv
+C:\Users\hw\AI-Risk-Analyzer\data.csv
 ```
 
 This means the training script is looking for the dataset in the project root directory instead of the `data/` folder.
