@@ -488,7 +488,7 @@ These improvements aim to strengthen the reliability, interpretability, and prac
 
 ## Contributors
 
-**Nikita Nassyrov**  
+**Nassyrov Nikita**  
 Machine Learning Development, Data Science, Financial Risk Analytics
 
 GitHub: [@nientevvv-sketch](https://github.com/nientevvv-sketch)
