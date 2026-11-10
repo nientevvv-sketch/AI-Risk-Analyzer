@@ -23,6 +23,7 @@ The project combines predictive modeling, model evaluation, financial benchmarki
 - [Interactive Application](#interactive-application)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Troubleshooting](#troubleshooting)
 - [Model Metadata](#model-metadata)
 - [Validation and Reliability Roadmap](#validation-and-reliability-roadmap)
 - [Limitations](#limitations)
@@ -61,7 +62,7 @@ These components serve different purposes: the bankruptcy dataset supports predi
 - Nested cross-validation and repeated validation experiments
 - Model metadata generation and feature schema validation
 - Interactive Streamlit risk assessment interface
-- Adjustable decision threshold
+- Adjustable probability threshold
 - Financial ratio benchmarking and stress-testing analysis
 
 ---
@@ -105,10 +106,10 @@ AI-Risk-Analyzer/
 
 The predictive model uses `data/data.csv`.
 
-- Target variable: `Bankrupt?`
-- Input features: structured financial indicators
-- Task: binary classification
-- Objective: identify companies associated with the bankruptcy class
+- **Target variable:** `Bankrupt?`
+- **Input features:** Structured financial indicators
+- **Task:** Binary classification
+- **Objective:** Identify companies associated with the bankruptcy class
 
 The dataset is used for model development, training, and evaluation.
 
@@ -244,148 +245,4 @@ Stress scenarios are illustrative analytical exercises and should not be interpr
 
 ## Interactive Application
 
-The Streamlit application provides an interface for interacting with the trained risk model.
-
-### Main functionality
-
-- Input financial indicators
-- Validate input features against model metadata
-- Generate a model-based risk assessment
-- Display predicted probability
-- Adjust the decision threshold
-- Interpret the classification result
-- Review model limitations
-
-The application is designed to demonstrate how a trained classification model can be integrated into an interactive financial risk analysis workflow.
-
----
-
-## Installation
-
-### Requirements
-
-- Python 3.11 or compatible version
-- pip
-- Git
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/nientevvv-sketch/AI-Risk-Analyzer.git
-cd AI-Risk-Analyzer
-```
-
-### 2. Create a virtual environment
-
-**Windows:**
-
-```powershell
-python -m venv .venv
-.venv\Scripts\activate
-```
-
-**Linux / macOS:**
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-```
-
-### 3. Install dependencies
-
-```bash
-pip install streamlit pandas scikit-learn joblib
-```
-
----
-
-## Usage
-
-### Train the model
-
-```bash
-python -m src.train_risk_model
-```
-
-The training script generates the trained model and metadata required by the application.
-
-### Run the application
-
-```bash
-streamlit run app/streamlit_app.py
-```
-
-Open the local URL displayed by Streamlit in your browser.
-
-### Using the Application
-
-1. Enter the required financial indicators.
-2. Submit the inputs for evaluation.
-3. Review the predicted probability.
-4. Compare the probability with the selected decision threshold.
-5. Interpret the output in the context of the model's limitations.
-
----
-
-## Model Metadata
-
-The application uses metadata stored in:
-
-```text
-models/model_metadata.json
-```
-
-The metadata supports feature schema validation and alignment between application inputs and model predictors.
-
-The application checks whether the feature order matches the expected model schema, helping reduce inconsistencies during inference.
-
----
-
-## Validation and Reliability Roadmap
-
-Future improvements focus on strengthening model reliability and analytical transparency.
-
-| Area | Planned Improvement |
-|---|---|
-| Data Leakage Audit | Review feature availability, preprocessing, and evaluation integrity |
-| Company-Level Validation | Investigate validation strategies for unseen companies |
-| Probability Calibration | Evaluate probability reliability using calibration curves and Brier score |
-| Threshold Optimization | Select decision thresholds using validation data and asymmetric error costs |
-| Model Explainability | Implement SHAP or permutation importance |
-| Robustness Analysis | Investigate sensitivity to input perturbations and distribution shifts |
-
-These improvements aim to strengthen the reliability, interpretability, and practical applicability of the predictive model.
-
----
-
-## Limitations
-
-- Predictive performance depends on the quality and representativeness of the training dataset.
-- Historical bankruptcy patterns may not generalize to other industries, markets, or economic conditions.
-- Model outputs are statistical predictions and should not be interpreted as guarantees of future business performance.
-- Probability estimates require appropriate calibration before being interpreted as reliable real-world probabilities.
-- Decision thresholds involve trade-offs between false positives and false negatives.
-- Financial stress-testing scenarios are illustrative and depend on the assumptions used.
-- The project is not a substitute for professional financial analysis or regulated credit-risk systems.
-
----
-
-## Contributors
-
-**Nikita Nassyrov**  
-Machine Learning Development, Model Evaluation, Data Analysis
-
-GitHub: [@nientevvv-sketch](https://github.com/nientevvv-sketch)
-
-**Dyussembek Bauyrzhan**  
-Financial Analysis, Excel Data Preparation, Industry Research
-
-GitHub: [@airanplayhd-dotcom](https://github.com/airanplayhd-dotcom)
-
----
-
-## License
-
-The repository currently does not include a confirmed open-source license.
-
-The licensing terms should be established before redistribution or commercial use. Dataset licensing and third-party financial data restrictions should also be respected.
+The Streamlit application provides an interface for interacting with the trained risk model
