@@ -1,92 +1,272 @@
 # AI Risk Analyzer
 
-AI Risk Analyzer is a machine learning project for assessing the likelihood of a company being in a high-risk financial state using structured financial indicators. The project includes a training pipeline, a web application, and supporting model metadata for evaluating corporate distress risk.
+**Machine Learning · Financial Risk Analytics · Explainable Risk Assessment**
+
+AI Risk Analyzer is a machine learning and financial analytics project focused on corporate bankruptcy prediction, financial risk assessment, and comparative financial analysis.
+
+The project combines predictive modeling, model evaluation, financial benchmarking, and an interactive Streamlit application to explore how machine learning can support financial risk analysis.
+
+> **Disclaimer:** This project is intended for research, educational purposes, and analytical decision support. It is not a certified credit rating, investment recommendation, or regulated underwriting system.
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Project Architecture](#project-architecture)
+- [Dataset](#dataset)
+- [Machine Learning Methodology](#machine-learning-methodology)
+- [Model Comparison](#model-comparison)
+- [Evaluation Metrics](#evaluation-metrics)
+- [Financial Analysis](#financial-analysis)
+- [Interactive Application](#interactive-application)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Model Metadata](#model-metadata)
+- [Validation and Reliability Roadmap](#validation-and-reliability-roadmap)
+- [Limitations](#limitations)
+- [Contributors](#contributors)
+- [License](#license)
+
+---
 
 ## Overview
 
-This repository builds and serves a predictive risk model that evaluates company financial fundamentals such as leverage, profitability, liquidity, and balance-sheet indicators. It is designed for research-oriented financial analysis and decision support, not for regulated credit underwriting.
+AI Risk Analyzer explores the application of machine learning to corporate financial distress analysis.
 
-The project currently includes:
+The project consists of two complementary analytical components:
 
-- A training script to build a Random Forest classification model
-- A Streamlit-based app for entering company indicators and receiving a risk assessment
-- Metadata describing model features, thresholds, and target class configuration
-- Example data files and evaluation outputs
+**1. Predictive Risk Modeling**
 
-## Key features
+A classification pipeline trained on structured financial indicators to estimate bankruptcy-related risk.
 
-- Automated model training with scikit-learn
-- Median imputation for missing numeric values
-- Feature schema validation between the model and app metadata
-- Adjustable probability threshold in the UI
-- Interactive dashboard for risk analysis using Streamlit
+**2. Financial Analysis and Benchmarking**
 
-## Model Comparison
+Exploratory financial analysis of Willis Towers Watson (WTW) and selected insurance brokerage companies, including financial ratio benchmarking and illustrative stress-testing scenarios.
 
-Four machine learning algorithms are evaluated:
+These components serve different purposes: the bankruptcy dataset supports predictive modeling, while the financial datasets support descriptive analysis and scenario-based evaluation.
 
-- Logistic Regression
-- Decision Tree
-- Random Forest
-- Gradient Boosting
+---
 
-Models are compared using a consistent evaluation pipeline and stratified data splitting.
+## Key Features
 
-## Evaluation Metrics
+- Automated machine learning training pipeline
+- Random Forest-based bankruptcy classification
+- Missing-value imputation using median values
+- Comparative evaluation of four machine learning algorithms
+- Stratified train/test splitting
+- ROC-AUC, PR-AUC, precision, recall, and F1-score evaluation
+- Confusion matrices and error analysis
+- Nested cross-validation and repeated validation experiments
+- Model metadata generation and feature schema validation
+- Interactive Streamlit risk assessment interface
+- Adjustable decision threshold
+- Financial ratio benchmarking and stress-testing analysis
 
-The project evaluates financial bankruptcy prediction using:
+---
 
-- ROC-AUC — ability to distinguish between bankrupt and non-bankrupt companies.
-- PR-AUC — precision-recall performance, particularly important for imbalanced data.
-- Precision — proportion of correctly identified bankruptcy cases among positive predictions.
-- Recall — proportion of actual bankruptcy cases correctly identified.
-- F1-score — harmonic mean of precision and recall.
-- Confusion Matrix — breakdown of true positives, true negatives, false positives, and false negatives.
-
-## Model Evaluation and Risk Analysis
-
-The evaluation focuses on identifying financially distressed companies while accounting for class imbalance and the different consequences of classification errors.
-
-Actual experimental results are reported in the project's results directory.
-
-## Project structure
+## Project Architecture
 
 ```text
 AI-Risk-Analyzer/
+│
 ├── app/
 │   └── streamlit_app.py
+│
 ├── data/
 │   ├── data.csv
 │   ├── Insurance_Brokers_Peer_Ultimate_Model_audit_v4.xlsx
 │   └── WTW_Clean_Financial_Model.xlsx
+│
 ├── models/
 │   ├── model_metadata.json
 │   ├── model_metadata.py
 │   ├── risk_model.py
 │   └── risk_model.joblib
+│
 ├── notebooks/
+│
 ├── results/
+│
 ├── src/
 │   └── train_risk_model.py
+│
 ├── .gitignore
 ├── README.md
 └── LICENSE
 ```
 
-## Data and modeling
+---
 
-The model is trained from `data/data.csv`, where the target column is `Bankrupt?`.
+## Dataset
 
-Training flow:
+### Bankruptcy Prediction Dataset
 
-1. Load the dataset
-2. Validate the binary target label
-3. Split into train/test data
-4. Train a `RandomForestClassifier` inside a preprocessing pipeline
-5. Save the trained model to `models/risk_model.joblib`
-6. Save feature metadata to `models/model_metadata.json`
+The predictive model uses `data/data.csv`.
 
-## Getting started
+- Target variable: `Bankrupt?`
+- Input features: structured financial indicators
+- Task: binary classification
+- Objective: identify companies associated with the bankruptcy class
+
+The dataset is used for model development, training, and evaluation.
+
+### Financial Analysis Datasets
+
+The repository also contains financial analysis workbooks:
+
+| Dataset | Purpose |
+|---|---|
+| `WTW_Clean_Financial_Model.xlsx` | Financial statement analysis and historical performance |
+| `Insurance_Brokers_Peer_Ultimate_Model_audit_v4.xlsx` | Comparative financial analysis of selected insurance brokerage companies |
+
+These financial workbooks are used for exploratory analysis, financial ratio benchmarking, and illustrative stress-testing scenarios. They are not the bankruptcy model's labeled training dataset.
+
+---
+
+## Machine Learning Methodology
+
+### Training Pipeline
+
+The primary training pipeline follows these steps:
+
+1. Load the bankruptcy dataset.
+2. Validate the target variable.
+3. Separate features and target.
+4. Split the dataset into stratified training and test subsets.
+5. Apply median imputation within a scikit-learn pipeline.
+6. Train a Random Forest classifier.
+7. Save the trained model.
+8. Generate model metadata for application integration.
+
+### Primary Model
+
+The current training implementation uses:
+
+- **Algorithm:** Random Forest Classifier
+- **Number of estimators:** 200
+- **Class weighting:** `balanced_subsample`
+- **Random state:** 42
+- **Missing-value handling:** Median imputation
+
+The trained model is saved to:
+
+```text
+models/risk_model.joblib
+```
+
+---
+
+## Model Comparison
+
+The project evaluates four machine learning algorithms:
+
+| Model | Description |
+|---|---|
+| Logistic Regression | Linear classification baseline |
+| Decision Tree | Interpretable tree-based classifier |
+| Random Forest | Ensemble of decision trees |
+| Gradient Boosting | Sequential boosting-based classifier |
+
+The comparison explores predictive performance, classification errors, and model stability.
+
+Experimental outputs are available in the `results/` directory.
+
+---
+
+## Evaluation Metrics
+
+The project evaluates bankruptcy classification using multiple metrics.
+
+| Metric | Purpose |
+|---|---|
+| ROC-AUC | Measures discrimination between classes |
+| PR-AUC | Evaluates precision-recall performance |
+| Precision | Measures the proportion of predicted bankruptcy cases that are correct |
+| Recall | Measures the proportion of actual bankruptcy cases identified |
+| F1-score | Balances precision and recall |
+| Confusion Matrix | Provides a breakdown of classification outcomes |
+| Cross-validation scores | Evaluate performance across multiple validation folds |
+
+Additional experiments investigate model stability, classification errors, and sensitivity to model configuration.
+
+### Experimental Results
+
+The repository contains evaluation artifacts such as:
+
+- `test_metrics.csv`
+- `final_comparison.csv`
+- `classification_reports.csv`
+- `nested_cv_scores.csv`
+- `nested_cv_summary.csv`
+- `repeated_cv_summary.csv`
+- `misclassified_samples.csv`
+
+These files provide detailed experimental results and supporting analysis.
+
+---
+
+## Financial Analysis
+
+The financial analysis component focuses on corporate financial performance and comparative industry analysis.
+
+### WTW Financial Analysis
+
+The WTW financial model supports analysis of:
+
+- Revenue trends
+- Profitability
+- Operating performance
+- Cash flow
+- Financial ratios
+- Historical financial performance
+
+### Insurance Brokerage Peer Benchmarking
+
+The peer benchmarking component examines selected insurance brokerage companies:
+
+- Willis Towers Watson (WTW)
+- Aon
+- Marsh McLennan (MMC)
+- Arthur J. Gallagher (AJG)
+- Brown & Brown (BRO)
+
+The analysis focuses on financial ratios, comparative performance, and illustrative financial stress scenarios.
+
+### Stress Testing
+
+The project includes scenario-based financial stress testing to explore how changes in financial assumptions may affect selected financial indicators.
+
+Stress scenarios are illustrative analytical exercises and should not be interpreted as forecasts.
+
+---
+
+## Interactive Application
+
+The Streamlit application provides an interface for interacting with the trained risk model.
+
+### Main functionality
+
+- Input financial indicators
+- Validate input features against model metadata
+- Generate a model-based risk assessment
+- Display predicted probability
+- Adjust the decision threshold
+- Interpret the classification result
+- Review model limitations
+
+The application is designed to demonstrate how a trained classification model can be integrated into an interactive financial risk analysis workflow.
+
+---
+
+## Installation
+
+### Requirements
+
+- Python 3.11 or compatible version
+- pip
+- Git
 
 ### 1. Clone the repository
 
@@ -97,15 +277,18 @@ cd AI-Risk-Analyzer
 
 ### 2. Create a virtual environment
 
+**Windows:**
+
+```powershell
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+**Linux / macOS:**
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-```
-
-On Windows:
-
-```bash
-.venv\Scripts\activate
 ```
 
 ### 3. Install dependencies
@@ -114,68 +297,95 @@ On Windows:
 pip install streamlit pandas scikit-learn joblib
 ```
 
-## Train the model
+---
+
+## Usage
+
+### Train the model
 
 ```bash
 python -m src.train_risk_model
 ```
 
-This produces the model artifact and metadata used by the app.
+The training script generates the trained model and metadata required by the application.
 
-## Run the app
+### Run the application
 
 ```bash
 streamlit run app/streamlit_app.py
 ```
 
-Then open the local URL shown by Streamlit in your browser.
+Open the local URL displayed by Streamlit in your browser.
 
-## Using the app
+### Using the Application
 
-The app displays a form with the financial indicators used during training. Once values are entered, the model evaluates the probability of the configured positive class and compares it against the selected decision threshold.
+1. Enter the required financial indicators.
+2. Submit the inputs for evaluation.
+3. Review the predicted probability.
+4. Compare the probability with the selected decision threshold.
+5. Interpret the output in the context of the model's limitations.
 
-The user can also inspect:
+---
 
-- submitted indicator values
-- predicted probability
-- decision threshold
-- interpretation and model limitations
+## Model Metadata
 
-## Model metadata and feature validation
+The application uses metadata stored in:
 
-The app checks that the trained model feature order matches the schema saved in `models/model_metadata.json`. This helps ensure that UI inputs align with the model's expected predictors.
+```text
+models/model_metadata.json
+```
 
-## Notes and limitations
+The metadata supports feature schema validation and alignment between application inputs and model predictors.
 
-- This project is a research-oriented financial risk model and is not a certified credit or underwriting system.
-- Prediction quality depends on data quality, feature engineering, and the representativeness of the training data.
-- The probability output should be interpreted carefully and is not a guarantee of future business performance.
+The application checks whether the feature order matches the expected model schema, helping reduce inconsistencies during inference.
 
-## Repository responsibilities
+---
 
-- `app/` contains the Streamlit user interface
-- `src/` contains the training code
-- `models/` contains the trained model and model metadata
-- `data/` contains datasets and documentation
-- `results/` stores outputs such as metrics and charts
-- `notebooks/` is available for exploratory analysis and experimentation
+## Validation and Reliability Roadmap
+
+Future improvements focus on strengthening model reliability and analytical transparency.
+
+| Area | Planned Improvement |
+|---|---|
+| Data Leakage Audit | Review feature availability, preprocessing, and evaluation integrity |
+| Company-Level Validation | Investigate validation strategies for unseen companies |
+| Probability Calibration | Evaluate probability reliability using calibration curves and Brier score |
+| Threshold Optimization | Select decision thresholds using validation data and asymmetric error costs |
+| Model Explainability | Implement SHAP or permutation importance |
+| Robustness Analysis | Investigate sensitivity to input perturbations and distribution shifts |
+
+These improvements aim to strengthen the reliability, interpretability, and practical applicability of the predictive model.
+
+---
+
+## Limitations
+
+- Predictive performance depends on the quality and representativeness of the training dataset.
+- Historical bankruptcy patterns may not generalize to other industries, markets, or economic conditions.
+- Model outputs are statistical predictions and should not be interpreted as guarantees of future business performance.
+- Probability estimates require appropriate calibration before being interpreted as reliable real-world probabilities.
+- Decision thresholds involve trade-offs between false positives and false negatives.
+- Financial stress-testing scenarios are illustrative and depend on the assumptions used.
+- The project is not a substitute for professional financial analysis or regulated credit-risk systems.
+
+---
+
+## Contributors
+
+**Nikita Nassyrov**  
+Machine Learning Development, Model Evaluation, Data Analysis
+
+GitHub: [@nientevvv-sketch](https://github.com/nientevvv-sketch)
+
+**Dyussembek Bauyrzhan**  
+Financial Analysis, Excel Data Preparation, Industry Research
+
+GitHub: [@airanplayhd-dotcom](https://github.com/airanplayhd-dotcom)
+
+---
 
 ## License
 
-This repository does not currently include a license file. If you plan to share or distribute the project publicly, consider adding an appropriate open-source license such as MIT or Apache 2.0.
+The repository currently does not include a confirmed open-source license.
 
-## Contributing
-
-Contributions and improvements are welcome. Common areas for enhancement include:
-
-- stronger preprocessing and feature engineering
-- validation and calibration analysis
-- better error handling and deployment setup
-- additional model comparisons and evaluation reports
-
-## Authors
-
-- **[Nikita Nassyrov]** — ML development, model evaluation, data analysis.
-- **[Dyussembek Bauyrzhan]** — Financial analysis, Excel data preparation, industry research.
-
-GitHub: [@nientevvv-sketch](https://github.com/nientevvv-sketch) [@airanplayhd-dotcom](https://github.com/airanplayhd-dotcom)
+The licensing terms should be established before redistribution or commercial use. Dataset licensing and third-party financial data restrictions should also be respected.
