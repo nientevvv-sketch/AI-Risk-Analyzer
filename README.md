@@ -245,4 +245,250 @@ Stress scenarios are illustrative analytical exercises and should not be interpr
 
 ## Interactive Application
 
-The Streamlit application provides an interface for interacting with the trained risk model
+The Streamlit application provides an interface for interacting with the trained risk model.
+
+### Main Functionality
+
+- Input financial indicators
+- Validate input features against model metadata
+- Generate a model-based risk assessment
+- Display predicted probability
+- Adjust the decision threshold
+- Interpret the classification result
+- Review model limitations
+
+The application is designed to demonstrate how a trained classification model can be integrated into an interactive financial risk analysis workflow.
+
+---
+
+## Installation
+
+### Requirements
+
+- Python 3.11 or compatible version
+- pip
+- Git
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/nientevvv-sketch/AI-Risk-Analyzer.git
+cd AI-Risk-Analyzer
+```
+
+If the repository folder already exists on your computer, skip the cloning step and navigate to the existing project directory.
+
+### 2. Create a Virtual Environment
+
+**Windows (PowerShell or CMD):**
+
+```powershell
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+**Linux / macOS:**
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+
+### 3. Install Dependencies
+
+```bash
+python -m pip install --upgrade pip
+python -m pip install streamlit pandas scikit-learn joblib matplotlib openpyxl
+```
+
+---
+
+## Usage
+
+### Train the Model
+
+```bash
+python -m src.train_risk_model
+```
+
+The training script generates the trained model and metadata required by the application.
+
+### Run the Application
+
+```bash
+python -m streamlit run app/streamlit_app.py
+```
+
+Open the local URL displayed by Streamlit in your browser.
+
+### Using the Application
+
+1. Enter the required financial indicators.
+2. Submit the inputs for evaluation.
+3. Review the predicted probability.
+4. Compare the probability with the selected decision threshold.
+5. Interpret the output in the context of the model's limitations.
+
+---
+
+## Troubleshooting
+
+### Training Data Not Found
+
+If you encounter the following error:
+
+```text
+FileNotFoundError: Training data not found:
+C:\Users\hw\AI-Risk-Analyzer\data.csv
+```
+
+This means the training script is looking for the dataset in the project root directory instead of the `data/` folder.
+
+**Step 1. Open the training script**
+
+In the terminal, run:
+
+```powershell
+notepad src/train_risk_model.py
+```
+
+**Step 2. Find the DATA_PATH variable**
+
+Locate this line:
+
+```python
+DATA_PATH = ROOT_DIR / "data.csv"
+```
+
+**Step 3. Correct the dataset path**
+
+Add the `data` folder to the path.
+
+Replace:
+
+```python
+DATA_PATH = ROOT_DIR / "data.csv"
+```
+
+With:
+
+```python
+DATA_PATH = ROOT_DIR / "data" / "data.csv"
+```
+
+**Step 4. Save the changes**
+
+Press:
+
+```text
+Ctrl + S
+```
+
+Then close Notepad.
+
+**Step 5. Verify the dataset location**
+
+Run:
+
+```powershell
+dir data
+```
+
+Make sure `data.csv` exists inside the `data/` directory.
+
+**Step 6. Run the training script again**
+
+```powershell
+python -m src.train_risk_model
+```
+
+The script should now find the dataset using the corrected path.
+
+### Module Not Found
+
+If you encounter an error such as:
+
+```text
+ModuleNotFoundError: No module named 'joblib'
+```
+
+Make sure your virtual environment is activated and install the dependencies:
+
+```bash
+python -m pip install streamlit pandas scikit-learn joblib matplotlib openpyxl
+```
+
+### Streamlit Command Not Found
+
+If the `streamlit` command is not recognized, run:
+
+```bash
+python -m streamlit run app/streamlit_app.py
+```
+
+This runs Streamlit through the active Python environment.
+
+---
+
+## Model Metadata
+
+The application uses metadata stored in:
+
+```text
+models/model_metadata.json
+```
+
+The metadata supports feature schema validation and alignment between application inputs and model predictors.
+
+The application checks whether the feature order matches the expected model schema, helping reduce inconsistencies during inference.
+
+---
+
+## Validation and Reliability Roadmap
+
+Future improvements focus on strengthening model reliability and analytical transparency.
+
+| Area | Planned Improvement |
+|---|---|
+| Data Leakage Audit | Review feature availability, preprocessing, and evaluation integrity |
+| Company-Level Validation | Investigate validation strategies for unseen companies |
+| Probability Calibration | Evaluate probability reliability using calibration curves and Brier score |
+| Threshold Optimization | Select decision thresholds using validation data and asymmetric error costs |
+| Model Explainability | Implement SHAP or permutation importance |
+| Robustness Analysis | Investigate sensitivity to input perturbations and distribution shifts |
+
+These improvements aim to strengthen the reliability, interpretability, and practical applicability of the predictive model.
+
+---
+
+## Limitations
+
+- Predictive performance depends on the quality and representativeness of the training dataset.
+- Historical bankruptcy patterns may not generalize to other industries, markets, or economic conditions.
+- Model outputs are statistical predictions and should not be interpreted as guarantees of future business performance.
+- Probability estimates require appropriate calibration before being interpreted as reliable real-world probabilities.
+- Decision thresholds involve trade-offs between false positives and false negatives.
+- Financial stress-testing scenarios are illustrative and depend on the assumptions used.
+- The project is not a substitute for professional financial analysis or regulated credit-risk systems.
+
+---
+
+## Contributors
+
+**Nikita Nassyrov**  
+Machine Learning Development, Model Evaluation, Data Analysis
+
+GitHub: [@nientevvv-sketch](https://github.com/nientevvv-sketch)
+
+**Dyussembek Bauyrzhan**  
+Financial Analysis, Excel Data Preparation, Industry Research
+
+GitHub: [@airanplayhd-dotcom](https://github.com/airanplayhd-dotcom)
+
+---
+
+## License
+
+The repository currently does not include a confirmed open-source license.
+
+The licensing terms should be established before redistribution or commercial use. Dataset licensing and third-party financial data restrictions should also be respected.
