@@ -4,7 +4,7 @@ import joblib
 import pandas as pd
 import streamlit as st
 
-ROOT_DIR = Path(__file__).resolve().parents[1]
+ROOT_DIR = Path(__file__).resolve().parent
 
 MODEL_PATH = ROOT_DIR / "models" / "risk_model.joblib"
 METADATA_PATH = ROOT_DIR / "models" / "model_metadata.json"
@@ -93,7 +93,7 @@ try:
     model = load_model()
     metadata = load_metadata()
     validate_feature_schema(model, metadata)
-except (FileNotFoundError, ValueError, OSError) as error:
+except (EOFError, FileNotFoundError, ValueError, OSError) as error:
     st.error(f"Application is not ready: {error}")
     st.markdown(
         """
