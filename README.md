@@ -229,29 +229,20 @@ In addition to WTW, the project examines other major publicly traded insurance b
 
 Companies included in the comparative analysis:
 
-Willis Towers Watson (WTW)
-
-Aon (AON)
-
-Marsh McLennan (MMC)
-
-Arthur J. Gallagher (AJG)
-
-Brown & Brown (BRO)
+- Willis Towers Watson (WTW)
+- Aon (AON)
+- Marsh McLennan (MMC)
+- Arthur J. Gallagher (AJG)
+- Brown & Brown (BRO)
 
 The comparative analysis focuses on:
 
-Revenue and profitability comparisons
-
-Operating margins
-
-Financial performance trends
-
-Capital structure and leverage
-
-Cash flow indicators
-
-Financial ratios and peer benchmarking
+- Revenue and profitability comparisons
+- Operating margins
+- Financial performance trends
+- Capital structure and leverage
+- Cash flow indicators
+- Financial ratios and peer benchmarking
 
 ### Stress Testing
 
