@@ -210,7 +210,7 @@ These files provide detailed experimental results and supporting analysis.
 
 ## Financial Analysis
 
-The financial analysis component focuses on corporate financial performance and comparative industry analysis.
+The financial analysis component focuses on corporate financial performance, historical trends, and comparative benchmarking across major insurance brokerage companies.
 
 ### WTW Financial Analysis
 
@@ -225,21 +225,39 @@ The WTW financial model supports analysis of:
 
 ### Insurance Brokerage Peer Benchmarking
 
-The peer benchmarking component examines selected insurance brokerage companies:
+In addition to WTW, the project examines other major publicly traded insurance brokerage companies to provide a broader industry perspective.
 
-- Willis Towers Watson (WTW)
-- Aon
-- Marsh McLennan (MMC)
-- Arthur J. Gallagher (AJG)
-- Brown & Brown (BRO)
+Companies included in the comparative analysis:
 
-The analysis focuses on financial ratios, comparative performance, and illustrative financial stress scenarios.
+Willis Towers Watson (WTW)
+
+Aon (AON)
+
+Marsh McLennan (MMC)
+
+Arthur J. Gallagher (AJG)
+
+Brown & Brown (BRO)
+
+The comparative analysis focuses on:
+
+Revenue and profitability comparisons
+
+Operating margins
+
+Financial performance trends
+
+Capital structure and leverage
+
+Cash flow indicators
+
+Financial ratios and peer benchmarking
 
 ### Stress Testing
 
-The project includes scenario-based financial stress testing to explore how changes in financial assumptions may affect selected financial indicators.
+The project also explores illustrative financial stress scenarios to examine how changes in selected financial assumptions may affect company-level financial indicators.
 
-Stress scenarios are illustrative analytical exercises and should not be interpreted as forecasts.
+These scenarios are analytical exercises based on defined assumptions and should not be interpreted as forecasts or official credit-risk assessments.
 
 ---
 
